@@ -1,0 +1,43 @@
+.todo-item {
+    margin-bottom: var(--size-3);
+
+    & hr {
+        margin-block: var(--size-4);
+    }
+
+    > :where(.status-bar) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--size-2);
+        flex-wrap: wrap;
+        margin: var(--size-2) 0;
+            
+        > :where(.chip) {
+            padding: var(--size-1) var(--size-4);
+            border-radius: var(--size-4);
+            color: var(--gray-9);
+            text-transform: capitalize;
+            background: var(--blue-3);
+
+            &:where(.medium) {
+                background: var(--yellow-3);
+            }
+
+            &:where(.high) {
+                background: var(--red-3);
+            }
+        }
+    }
+
+    > :where(.description) {
+        margin-top: var(--size-1);
+        padding: var(--size-3);
+        border: var(--border-size-1) solid color-mix(in srgb, currentColor 50%, transparent);
+        border-radius: var(--size-1);
+    }
+
+    > :where(.notes) {
+        margin-top: var(--size-2);
+    }
+}

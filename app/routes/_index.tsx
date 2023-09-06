@@ -1,41 +1,34 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 
+import 'open-props/media.min.css';
+import 'open-props/fonts.min.css';
+import 'open-props/sizes.min.css';
+import 'open-props/easings.min.css';
+import 'open-props/zindex.min.css';
+import 'open-props/shadows.min.css';
+import 'open-props/aspects.min.css';
+import 'open-props/colors.min.css';
+import 'open-props/gradients.min.css';
+import 'open-props/animations.min.css';
+import 'open-props/borders.min.css';
+import 'open-props/normalize.min.css';
+import 'open-props/buttons.min.css';
+import '~/components/index.css';
+import Todo from "~/components/Todo";
+
 export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+    return [
+        { title: "Todo app" },
+        { name: "description", content: "Todo app" },
+    ];
 };
 
 export default function Index() {
-  return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+
+    return (
+        <div className="page">
+            <h1>Todo App</h1>
+            <Todo />
+        </div>
+    );
 }
