@@ -53,3 +53,7 @@ npm run test
 ```
 
 Note that these tests are not expensive, as I have a busy weekend.
+If I had more time and resources, I'd set up the following
+- **Storybook**: To be able to develop my components in an isolated environment and try playing with various conditions
+- **Chromatic**: To create visual diffs of my stories written in storybook to be reviewed in PRs
+- **End-to-end Testing**: With a tool like Cyprus, to ensure that communication between the frontend and backend works properly
