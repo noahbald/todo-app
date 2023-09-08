@@ -32,8 +32,8 @@ app.disable("x-powered-by");
 
 // Remix fingerprints its assets so we can cache forever.
 app.use(
-  "/build",
-  express.static("public/build", { immutable: true, maxAge: "1y" })
+    "/build",
+    express.static("public/build", { immutable: true, maxAge: "1y" })
 );
 
 // Everything else (like favicon.ico) is cached for an hour. You may want to be
@@ -98,45 +98,47 @@ app.delete('/api/todos', async (request, response) => {
     response.send();
 })
 
-app.all(
-  "*",
-  process.env.NODE_ENV === "development"
+export const handler = process.env.NODE_ENV === "development"
     ? createDevRequestHandler()
     : createRequestHandler({
         build: await build,
         mode: process.env.NODE_ENV,
-      })
+    })
+
+app.all(
+    "*",
+    handler,
 );
 
 const port = process.env.PORT || 3000;
 app.listen(port, async () => {
-  console.log(`Express server listening on port ${port}`);
+    console.log(`Express server listening on port ${port}`);
 
-  if (process.env.NODE_ENV === "development") {
-    broadcastDevReady(await build);
-  }
+    if (process.env.NODE_ENV === "development") {
+        broadcastDevReady(await build);
+    }
 });
 
 function createDevRequestHandler() {
-  const watcher = chokidar.watch(BUILD_PATH, { ignoreInitial: true });
+    const watcher = chokidar.watch(BUILD_PATH, { ignoreInitial: true });
 
-  watcher.on("all", async () => {
-    // 1. purge require cache && load updated server build
-    const stat = fs.statSync(BUILD_PATH);
-    build = import(BUILD_PATH + "?t=" + stat.mtimeMs);
-    // 2. tell dev server that this app server is now ready
-    broadcastDevReady(await build);
-  });
+    watcher.on("all", async () => {
+        // 1. purge require cache && load updated server build
+        const stat = fs.statSync(BUILD_PATH);
+        build = import(BUILD_PATH + "?t=" + stat.mtimeMs);
+        // 2. tell dev server that this app server is now ready
+        broadcastDevReady(await build);
+    });
 
-  return async (req: any, res: any, next: any) => {
-    try {
-      return createRequestHandler({
-        build: await build,
-        mode: "development",
-      })(req, res, next);
-    } catch (error) {
-      next(error);
-    }
-  };
+    return async (req: any, res: any, next: any) => {
+        try {
+            return createRequestHandler({
+                build: await build,
+                mode: "development",
+            })(req, res, next);
+        } catch (error) {
+            next(error);
+        }
+    };
 }
 
