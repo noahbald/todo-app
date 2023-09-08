@@ -1,6 +1,7 @@
 import * as fs from "node:fs";
 
-import { createRequestHandler } from "@remix-run/express";
+import { createRequestHandler } from "@netlify/remix-adapter";
+import { RequestHandler, createRequestHandler as createExpressHandler } from "@remix-run/express";
 import { broadcastDevReady, installGlobals } from "@remix-run/node";
 import chokidar from "chokidar";
 import compression from "compression";
@@ -99,15 +100,22 @@ app.delete('/api/todos', async (request, response) => {
 })
 
 export const handler = process.env.NODE_ENV === "development"
-    ? createDevRequestHandler()
+    ? createDevRequestHandler(createRequestHandler)
     : createRequestHandler({
+        build: await build,
+        mode: process.env.NODE_ENV,
+    })
+
+export const expressHandler = process.env.NODE_ENV === "development"
+    ? createDevRequestHandler(createExpressHandler)
+    : createExpressHandler({
         build: await build,
         mode: process.env.NODE_ENV,
     })
 
 app.all(
     "*",
-    handler,
+    expressHandler,
 );
 
 const port = process.env.PORT || 3000;
@@ -119,7 +127,7 @@ app.listen(port, async () => {
     }
 });
 
-function createDevRequestHandler() {
+function createDevRequestHandler(creator: typeof createRequestHandler | typeof createExpressHandler) {
     const watcher = chokidar.watch(BUILD_PATH, { ignoreInitial: true });
 
     watcher.on("all", async () => {
@@ -132,7 +140,7 @@ function createDevRequestHandler() {
 
     return async (req: any, res: any, next: any) => {
         try {
-            return createRequestHandler({
+            return creator({
                 build: await build,
                 mode: "development",
             })(req, res, next);

@@ -120,7 +120,7 @@ __export(root_exports, {
 });
 
 // css-bundle-update-plugin-ns:C:\Users\noahw\Documents\Projects\todo-app\todo-app\node_modules\@remix-run\css-bundle\dist\esm\index.js
-var cssBundleHref = "/build/css-bundle-XYEAWERO.css";
+var cssBundleHref = "/build/css-bundle-PTSXD3ED.css";
 
 // app/root.tsx
 import {
@@ -967,7 +967,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-G3HIM3P2.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-ZOMPIGGR.js", "/build/_shared/chunk-ZNB6WRFP.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-UWRKKAX2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-554D27JG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "ef6e8b4b", hmr: { runtime: "/build/_shared\\chunk-ZNB6WRFP.js", timestamp: 1694176583221 }, url: "/build/manifest-EF6E8B4B.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-G3HIM3P2.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-ZOMPIGGR.js", "/build/_shared/chunk-ZNB6WRFP.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-IHXR2RZY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-554D27JG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "04f0c452", hmr: { runtime: "/build/_shared\\chunk-ZNB6WRFP.js", timestamp: 1694179814065 }, url: "/build/manifest-04F0C452.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
