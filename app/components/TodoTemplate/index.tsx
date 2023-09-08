@@ -1,13 +1,13 @@
 import React from "react";
-import type { TodoItemProps } from "../TodoItem";
+import { priority } from "~/types";
+import type { TodoItemData, TodoItemProps } from "../TodoItem";
 import useHandleTemplateSubmit from "./useHandleTemplateSubmit";
 
 import './TodoTemplate.css';
-import { priority } from "~/types";
 
 export interface TodoTemplateProps {
     initialInputs?: TodoItemProps;
-    onTemplateSubmit(entry: Omit<TodoItemProps, 'onEdit' | 'onDelete' | 'onSetStatus'>): void;
+    onTemplateSubmit(entry: TodoItemData): void;
 }
 
 const TodoTemplate: React.FC<TodoTemplateProps> = ({

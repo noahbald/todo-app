@@ -31,7 +31,7 @@ const useHandleTemplateSubmit = ({
             priority: formObject.priority,
             status: initialInputs?.status || 'In progress',
             id: initialInputs?.id || crypto.randomUUID(),
-            notes,
+            notes: notes || [],
         });
     }, [onTemplateSubmit, initialInputs]);
 }

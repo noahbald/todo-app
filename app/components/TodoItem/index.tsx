@@ -19,6 +19,8 @@ export interface TodoItemProps {
     onSetStatus(status: status): void;
 }
 
+export type TodoItemData = Omit<TodoItemProps, 'onEdit' | 'onDelete' | 'onSetStatus' | 'onComplete'>
+
 const TodoItem: React.FC<TodoItemProps> = ({
     title,
     description,

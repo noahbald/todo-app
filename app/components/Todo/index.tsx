@@ -6,15 +6,22 @@ import useHandleTodoUpdate from "./useHandleTodoUpdate";
 
 import './Todo.css';
 import useSortedTodoItems from "./useSortedTodoItems";
+import useTodoData from "./useTodoData";
+import useHandleTodoDelete from "./useHandleTodoDelete";
+import useHandleTodoSetStatus from "./useHandleTodoSetStatus";
 
 const Todo: React.FC = () => {
     const [editIndex, setEditIndex] = React.useState(-1);
     const [todoItems, setTodoItems] = React.useState<TodoItemProps[]>([]);
 
-    const handleTodoSubmit = useHandleTodoSubmit({ todoItems, setTodoItems, setEditIndex });
+    const handleTodoSubmit = useHandleTodoSubmit({ todoItems, setTodoItems });
     const handleTodoUpdate = useHandleTodoUpdate({ todoItems, setTodoItems, editIndex, setEditIndex });
+    const handleTodoSetStatus = useHandleTodoSetStatus({ todoItems, setTodoItems });
+    const handleTodoDelete = useHandleTodoDelete({ todoItems, setTodoItems });
 
     const sortedTodoItems = useSortedTodoItems(todoItems);
+
+    useTodoData(setTodoItems);
 
     return (
         <div className="todo">
@@ -30,12 +37,8 @@ const Todo: React.FC = () => {
                     key={todoItem.id}
                     {...todoItem}
                     onEdit={() => setEditIndex(i)}
-                    onDelete={() => setTodoItems([...todoItems.slice(0, i), ...todoItems.slice(i + 1)])}
-                    onSetStatus={(status) => {
-                        const updateTodoItems = todoItems.slice();
-                        updateTodoItems[i].status = status;
-                        setTodoItems(updateTodoItems);
-                    }}
+                    onDelete={() => handleTodoDelete(i)}
+                    onSetStatus={(status) => handleTodoSetStatus(status, i)}
                 />
             ))}
             {editIndex === -1 && (
