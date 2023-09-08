@@ -3,27 +3,29 @@ import { status } from '~/types';
 import { TodoItemProps } from '../TodoItem';
 
 interface useHandleTodoSetStatusDependencies {
-    todoItems: TodoItemProps[];
-    setTodoItems: React.Dispatch<React.SetStateAction<TodoItemProps[]>>;
+	todoItems: TodoItemProps[];
+	setTodoItems: React.Dispatch<React.SetStateAction<TodoItemProps[]>>;
 }
 
 function useHandleTodoSetStatus({
-    todoItems,
-    setTodoItems,
+	todoItems,
+	setTodoItems,
 }: useHandleTodoSetStatusDependencies) {
-    return React.useCallback((status: status, i: number) => {
-        const updatedTodoItems = todoItems.slice();
-        updatedTodoItems[i].status = status;
-        setTodoItems(updatedTodoItems);
+	return React.useCallback(
+		(status: status, i: number) => {
+			const updatedTodoItems = todoItems.slice();
+			updatedTodoItems[i].status = status;
+			setTodoItems(updatedTodoItems);
 
-        fetch('api/todos', {
-            method: 'PUT',
-            headers: new Headers({
-                'content-type': 'application/json',
-            }),
-            body: JSON.stringify(updatedTodoItems[i]),
-        });
-    }, [todoItems, setTodoItems])
+			fetch('api/todos', {
+				method: 'PUT',
+				headers: new Headers({
+					'content-type': 'application/json',
+				}),
+				body: JSON.stringify(updatedTodoItems[i]),
+			});
+		},
+		[todoItems, setTodoItems]
+	);
 }
 export default useHandleTodoSetStatus;
-
