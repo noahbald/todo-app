@@ -2,7 +2,7 @@ import React from 'react';
 import useMarkdown from '~/hooks/useMarkdown';
 import { Check, Edit, Delete, Unchecked } from '~/icons';
 import type { priority, status } from '~/types';
-import type { statusTransitions } from '~/types/status';
+import { statusTransitions } from '~/types/status';
 
 import './TodoItem.css';
 
@@ -17,6 +17,7 @@ export interface TodoItemProps {
 	onEdit(): void;
 	onDelete(): void;
 	onSetStatus(status: status): void;
+	'data-testid'?: string;
 }
 
 export type TodoItemData = Omit<
@@ -34,11 +35,12 @@ const TodoItem: React.FC<TodoItemProps> = ({
 	onEdit,
 	onDelete,
 	onSetStatus,
+	'data-testid': dataTestID,
 }) => {
 	const sanitizedDescriptionHTML = useMarkdown(description);
 
 	return (
-		<div className="todo-item">
+		<div className="todo-item" data-testid={dataTestID}>
 			<div className="status-bar of-todo-item">
 				<button
 					className="complete"

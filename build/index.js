@@ -120,7 +120,7 @@ __export(root_exports, {
 });
 
 // css-bundle-update-plugin-ns:C:\Users\noahw\Documents\Projects\todo-app\todo-app\node_modules\@remix-run\css-bundle\dist\esm\index.js
-var cssBundleHref = "/build/css-bundle-PTSXD3ED.css";
+var cssBundleHref = "/build/css-bundle-XYEAWERO.css";
 
 // app/root.tsx
 import {
@@ -225,12 +225,6 @@ var useMarkdown = (markdown) => React.useMemo(() => {
   return sanitizeHTML(dangerousHTML);
 }, [markdown]), useMarkdown_default = useMarkdown;
 
-// app/types/status.ts
-var statusTransitions = {
-  ["In progress" /* In progress */]: "Completed" /* Completed */,
-  ["Completed" /* Completed */]: "In progress" /* In progress */
-};
-
 // app/icons/check.svg.tsx
 import { jsxDEV as jsxDEV3 } from "react/jsx-dev-runtime";
 var Check = () => /* @__PURE__ */ jsxDEV3(
@@ -273,7 +267,7 @@ var Edit = () => /* @__PURE__ */ jsxDEV4(
   {
     stroke: "currentColor",
     fill: "currentColor",
-    "stroke-width": "0",
+    strokeWidth: "0",
     viewBox: "0 0 24 24",
     height: "1em",
     width: "1em",
@@ -308,7 +302,7 @@ var Delete = () => /* @__PURE__ */ jsxDEV5(
   {
     stroke: "currentColor",
     fill: "currentColor",
-    "stroke-width": "0",
+    strokeWidth: "0",
     viewBox: "0 0 24 24",
     height: "1em",
     width: "1em",
@@ -343,7 +337,7 @@ var Unchecked = () => /* @__PURE__ */ jsxDEV6(
   {
     stroke: "currentColor",
     fill: "currentColor",
-    "stroke-width": "0",
+    strokeWidth: "0",
     viewBox: "0 0 24 24",
     height: "1em",
     width: "1em",
@@ -371,6 +365,12 @@ var Unchecked = () => /* @__PURE__ */ jsxDEV6(
   this
 ), unchecked_svg_default = Unchecked;
 
+// app/types/status.ts
+var statusTransitions = {
+  ["In progress" /* In progress */]: "Completed" /* Completed */,
+  ["Completed" /* Completed */]: "In progress" /* In progress */
+};
+
 // app/components/TodoItem/index.tsx
 import { jsxDEV as jsxDEV7 } from "react/jsx-dev-runtime";
 var TodoItem = ({
@@ -382,10 +382,11 @@ var TodoItem = ({
   status: status2,
   onEdit,
   onDelete,
-  onSetStatus
+  onSetStatus,
+  "data-testid": dataTestID
 }) => {
   let sanitizedDescriptionHTML = useMarkdown_default(description);
-  return /* @__PURE__ */ jsxDEV7("div", { className: "todo-item", children: [
+  return /* @__PURE__ */ jsxDEV7("div", { className: "todo-item", "data-testid": dataTestID, children: [
     /* @__PURE__ */ jsxDEV7("div", { className: "status-bar of-todo-item", children: [
       /* @__PURE__ */ jsxDEV7(
         "button",
@@ -395,11 +396,11 @@ var TodoItem = ({
           children: [
             status2 === "Completed" ? /* @__PURE__ */ jsxDEV7(check_svg_default, {}, void 0, !1, {
               fileName: "app/components/TodoItem/index.tsx",
-              lineNumber: 47,
+              lineNumber: 49,
               columnNumber: 32
             }, this) : /* @__PURE__ */ jsxDEV7(unchecked_svg_default, {}, void 0, !1, {
               fileName: "app/components/TodoItem/index.tsx",
-              lineNumber: 47,
+              lineNumber: 49,
               columnNumber: 44
             }, this),
             "Mark as ",
@@ -410,61 +411,61 @@ var TodoItem = ({
         !0,
         {
           fileName: "app/components/TodoItem/index.tsx",
-          lineNumber: 43,
+          lineNumber: 45,
           columnNumber: 5
         },
         this
       ),
       /* @__PURE__ */ jsxDEV7("span", { className: `chip priority ${priority2}`, children: priority2 }, void 0, !1, {
         fileName: "app/components/TodoItem/index.tsx",
-        lineNumber: 50,
+        lineNumber: 52,
         columnNumber: 5
       }, this),
       /* @__PURE__ */ jsxDEV7("button", { className: "edit", onClick: onEdit, children: [
         /* @__PURE__ */ jsxDEV7(edit_svg_default, {}, void 0, !1, {
           fileName: "app/components/TodoItem/index.tsx",
-          lineNumber: 52,
+          lineNumber: 54,
           columnNumber: 6
         }, this),
         /* @__PURE__ */ jsxDEV7("span", { className: "visually-hidden", onClick: onEdit, children: "Edit" }, void 0, !1, {
           fileName: "app/components/TodoItem/index.tsx",
-          lineNumber: 53,
+          lineNumber: 55,
           columnNumber: 6
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/TodoItem/index.tsx",
-        lineNumber: 51,
+        lineNumber: 53,
         columnNumber: 5
       }, this),
       /* @__PURE__ */ jsxDEV7("button", { className: "delete", onClick: onDelete, children: [
         /* @__PURE__ */ jsxDEV7(delete_svg_default, {}, void 0, !1, {
           fileName: "app/components/TodoItem/index.tsx",
-          lineNumber: 58,
+          lineNumber: 60,
           columnNumber: 6
         }, this),
         /* @__PURE__ */ jsxDEV7("span", { className: "visually-hidden", children: "Delete" }, void 0, !1, {
           fileName: "app/components/TodoItem/index.tsx",
-          lineNumber: 59,
+          lineNumber: 61,
           columnNumber: 6
         }, this)
       ] }, void 0, !0, {
         fileName: "app/components/TodoItem/index.tsx",
-        lineNumber: 57,
+        lineNumber: 59,
         columnNumber: 5
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/TodoItem/index.tsx",
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 4
     }, this),
     /* @__PURE__ */ jsxDEV7("h2", { children: title }, void 0, !1, {
       fileName: "app/components/TodoItem/index.tsx",
-      lineNumber: 62,
+      lineNumber: 64,
       columnNumber: 4
     }, this),
     /* @__PURE__ */ jsxDEV7("p", { children: deadline.toLocaleDateString() }, void 0, !1, {
       fileName: "app/components/TodoItem/index.tsx",
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 4
     }, this),
     /* @__PURE__ */ jsxDEV7(
@@ -477,7 +478,7 @@ var TodoItem = ({
       !1,
       {
         fileName: "app/components/TodoItem/index.tsx",
-        lineNumber: 64,
+        lineNumber: 66,
         columnNumber: 4
       },
       this
@@ -485,22 +486,22 @@ var TodoItem = ({
     /* @__PURE__ */ jsxDEV7("ul", { className: "notes", children: notes.map(
       (note, i) => /* @__PURE__ */ jsxDEV7("li", { children: note }, i, !1, {
         fileName: "app/components/TodoItem/index.tsx",
-        lineNumber: 70,
+        lineNumber: 72,
         columnNumber: 9
       }, this)
     ) }, void 0, !1, {
       fileName: "app/components/TodoItem/index.tsx",
-      lineNumber: 68,
+      lineNumber: 70,
       columnNumber: 4
     }, this),
     /* @__PURE__ */ jsxDEV7("hr", {}, void 0, !1, {
       fileName: "app/components/TodoItem/index.tsx",
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 4
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/TodoItem/index.tsx",
-    lineNumber: 41,
+    lineNumber: 43,
     columnNumber: 5
   }, this);
 }, TodoItem_default = TodoItem;
@@ -966,7 +967,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-G3HIM3P2.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-ZOMPIGGR.js", "/build/_shared/chunk-ZNB6WRFP.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-IHXR2RZY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-ZW5ZQL3U.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "0ab79d66", hmr: { runtime: "/build/_shared\\chunk-ZNB6WRFP.js", timestamp: 1694166122947 }, url: "/build/manifest-0AB79D66.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-G3HIM3P2.js", imports: ["/build/_shared/chunk-JXHNNPNR.js", "/build/_shared/chunk-H36SQQE5.js", "/build/_shared/chunk-JKUASME7.js", "/build/_shared/chunk-ZOMPIGGR.js", "/build/_shared/chunk-ZNB6WRFP.js", "/build/_shared/chunk-N4FG5RPV.js", "/build/_shared/chunk-TVZC3ZTX.js", "/build/_shared/chunk-RODUX5XG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-UWRKKAX2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-554D27JG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "ef6e8b4b", hmr: { runtime: "/build/_shared\\chunk-ZNB6WRFP.js", timestamp: 1694176583221 }, url: "/build/manifest-EF6E8B4B.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_dev: !0, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !0, v2_headers: !0, v2_meta: !0, v2_normalizeFormMethod: !0, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
