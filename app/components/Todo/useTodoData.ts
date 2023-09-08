@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoItemProps, TodoItemData } from '../TodoItem';
+import type { TodoItemProps, TodoItemData } from '../TodoItem';
 
 const useTodoData = (
 	setTodos: React.Dispatch<React.SetStateAction<TodoItemProps[]>>

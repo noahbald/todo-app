@@ -1,5 +1,5 @@
-import { Connection } from 'mysql2/promise';
-import { TodoItemData } from './types';
+import type { Connection } from 'mysql2/promise';
+import type { TodoItemData } from './types';
 
 async function updateTodos(connection: Connection, todo: TodoItemData) {
 	const promises: Promise<any>[] = [];

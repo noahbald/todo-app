@@ -1,8 +1,8 @@
 import React from 'react';
 import useMarkdown from '~/hooks/useMarkdown';
-import { priority, status } from '~/types';
-import { statusTransitions } from '~/types/status';
 import { Check, Edit, Delete, Unchecked } from '~/icons';
+import type { priority, status } from '~/types';
+import type { statusTransitions } from '~/types/status';
 
 import './TodoItem.css';
 

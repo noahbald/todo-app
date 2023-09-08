@@ -1,6 +1,6 @@
-import { Connection } from 'mysql2/promise';
+import type { Connection } from 'mysql2/promise';
+import type { NoteItemData, TodoItemData } from './types';
 import { priority } from '../../types';
-import { NoteItemData, TodoItemData } from './types';
 
 async function selectTodos(connection: Connection): Promise<TodoItemData[]> {
 	const [todoRows] = await connection.execute('SELECT * FROM todos');

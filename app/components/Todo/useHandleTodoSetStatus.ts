@@ -1,6 +1,6 @@
 import React from 'react';
-import { status } from '~/types';
-import { TodoItemProps } from '../TodoItem';
+import type { status } from '~/types';
+import type { TodoItemProps } from '../TodoItem';
 
 interface useHandleTodoSetStatusDependencies {
 	todoItems: TodoItemProps[];

@@ -1,6 +1,6 @@
 import React from 'react';
-import { TodoItemProps } from '../TodoItem';
-import { TodoTemplateProps } from '../TodoTemplate';
+import type { TodoItemProps } from '../TodoItem';
+import type { TodoTemplateProps } from '../TodoTemplate';
 
 interface useHandleTodoUpdateDependencies {
 	todoItems: TodoItemProps[];

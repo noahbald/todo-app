@@ -3,12 +3,12 @@ import TodoItem, { type TodoItemProps } from '../TodoItem';
 import TodoTemplate from '../TodoTemplate';
 import useHandleTodoSubmit from './useHandleTodoSubmit';
 import useHandleTodoUpdate from './useHandleTodoUpdate';
-
-import './Todo.css';
 import useSortedTodoItems from './useSortedTodoItems';
 import useTodoData from './useTodoData';
 import useHandleTodoDelete from './useHandleTodoDelete';
 import useHandleTodoSetStatus from './useHandleTodoSetStatus';
+
+import './Todo.css';
 
 const Todo: React.FC = () => {
 	const [editIndex, setEditIndex] = React.useState(-1);

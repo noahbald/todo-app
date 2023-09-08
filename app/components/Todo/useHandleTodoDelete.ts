@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoItemProps } from '../TodoItem';
+import type { TodoItemProps } from '../TodoItem';
 
 interface useHandleTodoDeleteDependencies {
 	todoItems: TodoItemProps[];

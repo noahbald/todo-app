@@ -1,7 +1,7 @@
 import React from 'react';
 import { priority } from '~/types';
-import type { TodoItemData, TodoItemProps } from '../TodoItem';
 import useHandleTemplateSubmit from './useHandleTemplateSubmit';
+import type { TodoItemData, TodoItemProps } from '../TodoItem';
 
 import './TodoTemplate.css';
 
